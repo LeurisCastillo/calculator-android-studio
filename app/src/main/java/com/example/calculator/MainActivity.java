@@ -19,16 +19,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView calculusObj, prevValueInputted, txtUsername;
     Boolean numberWasInputed = false;
     Integer prevValue, actualValue;
-    EditText inputUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        Bundle usernameGiven = getIntent().getExtras();
 
-        calculusObj = findViewById(R.id.tv_calculus);
-        prevValueInputted = findViewById(R.id.prev_value_inputed);
-        txtUsername = findViewById(R.id.txt_username);
+        calculusObj = (TextView) findViewById(R.id.tv_calculus);
+        prevValueInputted = (TextView) findViewById(R.id.prev_value_inputed);
+        txtUsername = (TextView) findViewById(R.id.txt_username);
 
         Button btnSum = findViewById(R.id.btn_sum);
         Button btnSubstraction = findViewById(R.id.btn_substraction);
@@ -49,8 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnUsaCurrency.setOnClickListener(this);
         btnEuroCurrency.setOnClickListener(this);
         btnInglanCurrency.setOnClickListener(this);
-
-        setContentView(R.layout.login_by_name);
+        
+        if (usernameGiven != null){
+            txtUsername.setText(usernameGiven.getString("username"));
+        }
     }
 
 
@@ -240,15 +243,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(layout);
         toast.show();
-    }
-
-    public void checkUser(View view){
-
-        inputUsername = findViewById(R.id.input_username);
-        String name = inputUsername.getText().toString();
-
-        if (!name.equals("")){
-            setContentView(R.layout.activity_main);
-        }
     }
 }
