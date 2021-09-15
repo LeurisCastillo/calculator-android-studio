@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="40dp"
+    android:background="@android:color/holo_blue_dark"
+    android:id="@+id/login_root">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your name: "
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        />
+
+    <EditText
+        android:inputType="textPersonName"
+        android:id="@+id/input_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:ems="10"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_OK"
+        android:onClick="checkUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:text="OK"
+        android:background="@color/white"
+        />
+</LinearLayout>

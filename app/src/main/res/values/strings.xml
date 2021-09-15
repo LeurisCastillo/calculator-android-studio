@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string-array name="spinner_from">
+        <item>RD</item>
+    </string-array>
+    <string-array name="spinner_to">
+        <item>USA</item>
+        <item>EURO</item>
+        <item>CO</item>
+        <item>Bs</item>
+    </string-array>
+</resources>
